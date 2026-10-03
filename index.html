@@ -57,7 +57,7 @@ footer{padding:30px 0;border-top:1px solid var(--border);margin-top:20px}.footer
 <a class="skip-link" href="#main-content">मुख्य सामग्री पर जाएँ</a>
 <header><div class="wrap nav">
 <a class="brand" href="#home">🎓 Student Tools Hindi</a>
-<nav class="navlinks"><a href="#tools">Tools</a><a href="#faq">FAQ</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<nav class="navlinks"><a href="#tools">Tools</a><a href="#how-it-works">कैसे काम करता है</a><a href="#faq">FAQ</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
 <button class="ghost" id="themeBtn" type="button" onclick="toggleTheme()">🌙</button>
 </div></header>
 
@@ -66,16 +66,16 @@ footer{padding:30px 0;border-top:1px solid var(--border);margin-top:20px}.footer
 <div class="wrap">
 <h1>Students के लिए Free Online Tools</h1>
 <p>Percentage, marks, CGPA, attendance, age, dates, calculators, converters, study timers और exam utilities — एक ही जगह।</p>
-<div class="search"><input id="search" placeholder="Tool खोजें..." oninput="filterTools()"><button onclick="document.getElementById('tools').scrollIntoView()">Tools देखें</button></div>
+<div class="search"><input id="search" type="search" aria-label="Tool खोजें" placeholder="Tool खोजें..." oninput="filterTools()"><button type="button" onclick="document.getElementById('tools').scrollIntoView()">Tools देखें</button></div>
 </div></section>
 
 <div class="wrap"><div class="ad">ADVERTISEMENT — यहाँ बाद में approved ad network का code लगाया जा सकता है।</div></div>
 
 <section id="tools"><div class="wrap">
 <div class="section-title"><div><h2>Student Tools</h2><div class="muted">नीचे किसी tool को चुनें।</div></div></div>
-<div class="grid" id="toolGrid"></div>
+<div class="grid" id="toolGrid" aria-live="polite"></div><p id="noTools" class="muted" hidden>कोई matching tool नहीं मिला।</p>
 <div class="workspace" id="workspace"><div class="panel">
-<div class="section-title"><h2 id="toolTitle"></h2><button class="ghost" onclick="closeTool()">✕ बंद</button></div>
+<div class="section-title"><h2 id="toolTitle"></h2><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="ghost" type="button" onclick="resetTool()">↺ Reset</button><button class="ghost" type="button" onclick="closeTool()">✕ बंद</button></div></div>
 <div id="toolBody"></div></div></div>
 </div></section>
 
@@ -91,6 +91,8 @@ footer{padding:30px 0;border-top:1px solid var(--border);margin-top:20px}.footer
 <section id="seo-more" class="section"><div class="container"><div class="section-head"><h2>More Student Calculator Guides</h2><p>Simple explanations for common student tools.</p></div><div class="grid"><article class="card"><h3>Discount Calculator</h3><p>Original price और discount percentage डालकर discount और final price निकालें।</p></article><article class="card"><h3>Profit &amp; Loss Calculator</h3><p>Cost price और selling price से profit या loss percentage निकालें।</p></article><article class="card"><h3>Simple Interest Calculator</h3><p>Principal, rate और time से simple interest और total amount निकालें।</p></article><article class="card"><h3>Compound Interest Calculator</h3><p>Principal, rate और time से compound amount समझें।</p></article><article class="card"><h3>EMI Calculator</h3><p>Loan amount, interest rate और tenure से estimated EMI देखें।</p></article><article class="card"><h3>Exam Countdown</h3><p>Exam date चुनकर remaining time track करें।</p></article><article class="card"><h3>Study Timer</h3><p>Focused study sessions के लिए countdown timer इस्तेमाल करें।</p></article><article class="card"><h3>Marks Required</h3><p>Target percentage के लिए required marks का अनुमान लगाएँ।</p></article></div></div></section>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Student Tools Hindi Calculators","itemListElement":[{"@type":"ListItem","position":1,"name":"Percentage Calculator"},{"@type":"ListItem","position":2,"name":"Marks Calculator"},{"@type":"ListItem","position":3,"name":"CGPA Calculator"},{"@type":"ListItem","position":4,"name":"Attendance Calculator"},{"@type":"ListItem","position":5,"name":"Age Calculator"},{"@type":"ListItem","position":6,"name":"Discount Calculator"},{"@type":"ListItem","position":7,"name":"Simple Interest Calculator"},{"@type":"ListItem","position":8,"name":"EMI Calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"क्या ये tools free हैं?","acceptedAnswer":{"@type":"Answer","text":"हाँ, इस website के tools front-end पर free इस्तेमाल के लिए बनाए गए हैं।"}},{"@type":"Question","name":"क्या calculation server पर जाती है?","acceptedAnswer":{"@type":"Answer","text":"इन calculators की सामान्य गणनाएँ browser में JavaScript से होती हैं।"}},{"@type":"Question","name":"क्या Contact form अभी email भेजता है?","acceptedAnswer":{"@type":"Answer","text":"नहीं। यह static front-end demo form है और अभी message send नहीं करता।"}}]}</script>
+<section id="how-it-works"><div class="wrap"><h2>ये tools कैसे काम करते हैं?</h2><div class="grid"><div class="panel"><h3>1. जानकारी भरें</h3><p>जिस calculation की जरूरत है, उसके अनुसार numbers, dates या दूसरी जरूरी values भरें।</p></div><div class="panel"><h3>2. Calculate दबाएँ</h3><p>Calculation आपके browser में होती है। सामान्य tool calculations के लिए data किसी server पर भेजना जरूरी नहीं है।</p></div><div class="panel"><h3>3. Result देखें</h3><p>Result पढ़ें और जरूरत होने पर values बदलकर दोबारा calculation करें। Official records या rules के लिए संबंधित official source को प्राथमिकता दें।</p></div></div><div class="notice"><strong>हमारा उद्देश्य:</strong> विद्यार्थियों को रोज़मर्रा की पढ़ाई और सामान्य calculations के लिए सरल और समझने में आसान tools देना है।</div></div></section>
 
 <section id="faq"><div class="wrap"><h2>FAQ</h2>
 <details class="faq-item"><summary>क्या ये tools free हैं?</summary><p>हाँ, इस website के tools front-end पर free इस्तेमाल के लिए बनाए गए हैं।</p></details>
@@ -101,14 +103,15 @@ footer{padding:30px 0;border-top:1px solid var(--border);margin-top:20px}.footer
 
 <section id="about"><div class="wrap"><h2>About Student Tools Hindi</h2>
 <p>Student Tools Hindi का उद्देश्य विद्यार्थियों को रोज़मर्रा की पढ़ाई और सामान्य calculations के लिए सरल online utilities देना है।</p>
+<p><strong>Content और maintenance:</strong> Website के tools और explanations student use को ध्यान में रखकर maintain किए जाते हैं। Calculations browser में चलती हैं; महत्वपूर्ण results के लिए संबंधित official source से verification करना जरूरी है।</p>
 <div class="notice">महत्वपूर्ण: calculators सामान्य उपयोग के लिए हैं। किसी official result, medical decision, financial contract या examination rule के लिए संबंधित official source को प्राथमिकता दें।</div>
 </div></section>
 
 <section id="contact"><div class="wrap"><h2>Contact</h2>
 <p class="muted">यह front-end contact form है। इसे वास्तविक email service से जोड़ने के बाद submissions प्राप्त किए जा सकते हैं।</p>
-<form onsubmit="contactDemo(event)" class="panel">
-<div class="row"><div class="field"><label>नाम</label><input required></div><div class="field"><label>Email</label><input type="email" required></div></div>
-<div class="field"><label>संदेश</label><textarea rows="5" required></textarea></div>
+<form id="contactForm" onsubmit="contactDemo(event)" class="panel">
+<div class="row"><div class="field"><label for="contact-name">नाम</label><input id="contact-name" name="name" autocomplete="name" required></div><div class="field"><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" autocomplete="email" required></div></div>
+<div class="field"><label for="contact-message">संदेश</label><textarea id="contact-message" name="message" rows="5" required></textarea></div>
 <button type="submit">Submit</button><div id="contactMsg" class="result" hidden></div>
 </form></div></section>
 
@@ -192,15 +195,16 @@ const names=Object.fromEntries(tools.map(x=>[x[0],x[1]]));
 const grid=document.getElementById("toolGrid");
 grid.innerHTML=tools.map(([id,title,d])=>`<article class="tool-card" data-search="${title.toLowerCase()} ${d.toLowerCase()}"><h3>${title}</h3><p>${d}</p><button onclick="openTool('${id}')">Open Tool</button></article>`).join("");
 
-function field(label,id,type="number",extra=""){return `<div class="field"><label>${label}</label><input id="${id}" type="${type}" ${extra}></div>`}
-function result(v){return `<div class="result">${v}</div>`}
+function field(label,id,type="number",extra=""){return `<div class="field"><label for="${id}">${label}</label><input id="${id}" name="${id}" type="${type}" ${extra}></div>`}
+function result(v){return `<div class="result" aria-live="polite">${v || ""}</div>`}
 function openTool(id){
  document.getElementById("workspace").classList.add("show");
  document.getElementById("toolTitle").textContent=names[id];
  document.getElementById("toolBody").innerHTML=renderTool(id);
  window.scrollTo({top:document.getElementById("workspace").offsetTop-80,behavior:"smooth"});
 }
-function closeTool(){document.getElementById("workspace").classList.remove("show")}
+function closeTool(){pauseTimer();document.getElementById("workspace").classList.remove("show")}
+function resetTool(){pauseTimer();let body=document.getElementById("toolBody");body.querySelectorAll("input,select,textarea").forEach(e=>e.value="");let r=body.querySelector("#r");if(r)r.innerHTML=result("");if(document.getElementById("timer")){timerSec=1500;renderTimer()}}
 function btn(text,fn){return `<button type="button" onclick="${fn}">${text}</button>`}
 
 function renderTool(id){
@@ -209,7 +213,7 @@ case"percentage":return `<div class="row">${field("प्राप्त अं�
 case"marks":return `<div class="row">${field("Subject 1","m1")}${field("Subject 2","m2")}${field("Subject 3","m3")}${field("Subject 4","m4")}${field("Subject 5","m5")}</div>${btn("Calculate","calcMarks()")}<div id="r">${result("")}</div>`;
 case"cgpa":return `<div class="row">${field("CGPA","cgpa")}</div>${btn("Calculate","calcCGPA()")}<div id="r">${result("")}</div>`;
 case"grade":return field("Percentage","gradePct")+btn("Calculate","calcGrade()")+`<div id="r">${result("")}</div>`;
-case"age":return `<div class="row">${field("जन्मतिथि","dob","date")}${field("आज की तारीख","ageToday","date")}</div>${btn("Calculate","calcAge()")}<div id="r">${result("")}</div>`;
+case"age":return `<div class="row">${field("जन्मतिथि","dob","date")}${field("आज की तारीख","ageToday","date")}</div>`${btn("Calculate","calcAge()")}<div id="r">${result("")}</div>`;
 case"attendance":return `<div class="row">${field("Attended classes","att")}${field("Total classes","attTotal")}</div>${btn("Calculate","calcAttendance()")}<div id="r">${result("")}</div>`;
 case"requiredAttendance":return `<div class="row">${field("Current attended","raA")}${field("Current total","raT")}${field("Target %","raTarget")}</div>${btn("Calculate","calcRequiredAttendance()")}<div id="r">${result("")}</div>`;
 case"dateDiff":return `<div class="row">${field("Start date","d1","date")}${field("End date","d2","date")}</div>${btn("Calculate","calcDateDiff()")}<div id="r">${result("")}</div>`;
@@ -240,12 +244,12 @@ case"marksRequired":return `<div class="row">${field("Total marks","mrTotal")}${
 function converter(label,units,fn){return `<div class="row">${field("Value","cv")}<div class="field"><label>From</label><select id="from">${units.map(u=>`<option>${u}</option>`).join("")}</select></div><div class="field"><label>To</label><select id="to">${units.map(u=>`<option>${u}</option>`).join("")}</select></div></div>${btn("Convert",fn)}<div id="r">${result("")}</div>`}
 function n(id){return Number(document.getElementById(id).value)}
 function out(v){document.getElementById("r").innerHTML=result(v)}
-function calcPercentage(){let g=n("pGot"),t=n("pTotal");out(t>0?`${(g/t*100).toFixed(2)}%`:"कृपया valid total दें।")}
+function calcPercentage(){let g=n("pGot"),t=n("pTotal");out(Number.isFinite(g)&&Number.isFinite(t)&&t>0&&g>=0?`${(g/t*100).toFixed(2)}%`:"कृपया valid values दें।")}
 function calcMarks(){let a=[1,2,3,4,5].map(i=>n("m"+i));let t=a.reduce((x,y)=>x+y,0);out(`Total = ${t}<br>Percentage = ${(t/500*100).toFixed(2)}%`)}
 function calcCGPA(){let c=n("cgpa");out(isFinite(c)?`Approx Percentage = ${(c*9.5).toFixed(2)}%<br><small>यह common conversion formula है। अपने board/institution का official formula देखें।</small>`:"Valid CGPA दें।")}
 function calcGrade(){let p=n("gradePct");let g=p>=90?"A+":p>=80?"A":p>=70?"B+":p>=60?"B":p>=50?"C":p>=33?"D":"F";out(`Grade: ${g}`)}
 function calcAge(){let d=new Date(document.getElementById("dob").value),t=new Date(document.getElementById("ageToday").value);if(isNaN(d)||isNaN(t)||t<d)return out("Valid dates दें।");let y=t.getFullYear()-d.getFullYear(),m=t.getMonth()-d.getMonth(),day=t.getDate()-d.getDate();if(day<0){m--;day+=new Date(t.getFullYear(),t.getMonth(),0).getDate()}if(m<0){y--;m+=12}out(`${y} वर्ष ${m} महीने ${day} दिन`)}
-function calcAttendance(){let a=n("att"),t=n("attTotal");out(t>0?`${(a/t*100).toFixed(2)}%`:"Valid total दें।")}
+function calcAttendance(){let a=n("att"),t=n("attTotal");out(Number.isFinite(a)&&Number.isFinite(t)&&t>0&&a>=0&&a<=t?`${(a/t*100).toFixed(2)}%`:"Valid attendance values दें।")}
 function calcRequiredAttendance(){let a=n("raA"),t=n("raT"),target=n("raTarget")/100;if(t<=0||target<0||target>1)return out("Valid values दें।");if(target===1)return out(a===t?"100% target पहले से पूरा है।":"100% target के लिए नई classes में हर class attend करनी होगी; finite number में target तभी मिलेगा जब current attendance already 100% हो।");let x=(target*t-a)/(1-target);out(`लगभग ${Math.max(0,Math.ceil(x))} लगातार classes attend करनी होंगी।`)}
 function dateObj(id){return new Date(document.getElementById(id).value+"T00:00:00")}
 function calcDateDiff(){let a=dateObj("d1"),b=dateObj("d2");out(isNaN(a)||isNaN(b)?"Valid dates दें।":`${Math.round(Math.abs(b-a)/86400000)} days`)}
@@ -254,7 +258,7 @@ function calcBasic(){let a=Number(document.getElementById("ca").value),b=Number(
 function calcAverage(){let a=document.getElementById("avg").value.split(",").map(Number).filter(Number.isFinite);out(a.length?(a.reduce((x,y)=>x+y,0)/a.length).toFixed(2):"Numbers दें।")}
 function gcd(a,b){a=Math.abs(Math.round(a));b=Math.abs(Math.round(b));while(b){[a,b]=[b,a%b]}return a||1}
 function calcRatio(){let a=n("rA"),b=n("rB");if(!Number.isFinite(a)||!Number.isFinite(b)||b===0)return out("Valid values दें।");let g=gcd(a,b);out(`${a/g} : ${b/g}`)}
-function calcDiscount(){let p=n("dp"),d=n("dd");out(`Discount = ${(p*d/100).toFixed(2)}<br>Final price = ${(p-p*d/100).toFixed(2)}`)}
+function calcDiscount(){let p=n("dp"),d=n("dd");if(p<0||d<0||d>100)return out("Original price और discount % valid दें।");out(`Discount = ${(p*d/100).toFixed(2)}<br>Final price = ${(p-p*d/100).toFixed(2)}`)}
 function calcProfitLoss(){let c=n("cp"),s=n("sp");if(c<=0)return out("Valid cost price दें।");let diff=s-c;out(diff>=0?`Profit = ${diff.toFixed(2)}<br>Profit % = ${(diff/c*100).toFixed(2)}%`:`Loss = ${(-diff).toFixed(2)}<br>Loss % = ${(-diff/c*100).toFixed(2)}%`)}
 function calcSI(){let p=n("sip"),r=n("sir"),t=n("sit");let si=p*r*t/100;out(`Simple Interest = ${si.toFixed(2)}<br>Amount = ${(p+si).toFixed(2)}`)}
 function calcCI(){let p=n("cip"),r=n("cir"),t=n("cit");let amount=p*Math.pow(1+r/100,t);out(`Compound Interest = ${(amount-p).toFixed(2)}<br>Amount = ${amount.toFixed(2)}`)}
@@ -278,25 +282,12 @@ function startCountdown(){clearInterval(countInt);let target=new Date(document.g
 function calcBMI(){let w=n("bw"),h=n("bh")/100;if(w<=0||h<=0)return out("Valid values दें।");out(`BMI = ${(w/(h*h)).toFixed(2)}<br><small>Interpretation के लिए age-appropriate official guidance देखें।</small>`)}
 function calcPercentChange(){let a=n("oldV"),b=n("newV");out(a!==0?`${((b-a)/Math.abs(a)*100).toFixed(2)}%`:"Old value zero नहीं होना चाहिए।")}
 function calcMarksRequired(){let total=n("mrTotal"),pct=n("mrPct"),got=n("mrGot");if(total<=0)return out("Valid total marks दें।");let target=total*pct/100,need=target-got;out(`Target marks = ${target.toFixed(2)}<br>और चाहिए = ${Math.max(0,need).toFixed(2)}`)}
-function filterTools(){let q=document.getElementById("search").value.toLowerCase().trim();document.querySelectorAll(".tool-card").forEach(c=>c.style.display=c.dataset.search.includes(q)?"":"none")}
+function filterTools(){let q=document.getElementById("search").value.toLowerCase().trim(),count=0;document.querySelectorAll(".tool-card").forEach(c=>{let show=c.dataset.search.includes(q);c.style.display=show?"":"none";if(show)count++});document.getElementById("noTools").hidden=count!==0}
 function toggleTheme(){document.body.classList.toggle("dark");localStorage.setItem("studentTheme",document.body.classList.contains("dark")?"dark":"light")}
 if(localStorage.getItem("studentTheme")==="dark")document.body.classList.add("dark");
 function contactDemo(e){e.preventDefault();let x=document.getElementById("contactMsg");x.hidden=false;x.textContent="Demo form submit हुआ। वास्तविक email receiving के लिए form/backend service जोड़ें।"}
 document.getElementById("year").textContent=new Date().getFullYear();
-// Demo contact form: no data is sent or stored.
-const contactForm = document.getElementById("contactForm");
-if (contactForm) {
-  contactForm.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const msg = document.getElementById("contactMsg");
-    if (msg) {
-      msg.hidden = false;
-      msg.textContent = "यह demo form है। अभी कोई message send नहीं किया जाता।";
-    }
-    contactForm.reset();
-  });
-}
-
+function contactDemo(e){e.preventDefault();let x=document.getElementById("contactMsg");x.hidden=false;x.textContent="यह demo form है। अभी कोई message send या store नहीं किया जाता।";e.target.reset()}
 </script>
 </body>
 </html>
